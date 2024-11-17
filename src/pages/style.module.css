@@ -1,0 +1,46 @@
+body.light {
+  --background-color: #fff;
+  --text-color: #222;
+}
+
+body.dark {
+  --background-color: #292a2d;
+  --text-color: #a9a9b3;
+}
+
+.home {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 90%;
+  margin: auto;
+}
+.homewrap {
+  min-height: calc(100vh - 125px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game {
+  padding: 1rem;
+  border: 1px solid var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in;
+}
+.game:hover {
+  scale: 1.01;
+}
+.game a {
+  color: var(--text-color);
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

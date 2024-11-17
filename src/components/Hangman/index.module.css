@@ -1,0 +1,224 @@
+body.light {
+  --background-color: #fff;
+  --text-color: #222;
+}
+
+body.dark {
+  --background-color: #292a2d;
+  --text-color: #a9a9b3;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  width: 90%;
+  margin: auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  height: calc(100vh - 125px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.wrapper > .left {
+  padding-left: 2rem;
+  /* flex-grow: 1; */
+}
+.msg {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-color);
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* body part css start */
+/* hangman */
+.hangman {
+  position: relative;
+}
+.base {
+  height: 5px;
+  width: 100px;
+  margin: auto;
+  background-color: var(--text-color);
+}
+.piller {
+  width: 5px;
+  height: 200px;
+  background-color: var(--text-color);
+}
+.rod {
+  width: 100px;
+  height: 5px;
+  background-color: var(--text-color);
+  /* margin-left: 120px; */
+}
+.rope {
+  height: 20px;
+  width: 5px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.head {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 5px solid var(--text-color);
+  position: absolute;
+  top: 9%;
+  right: -9%;
+}
+.neck {
+  width: 5px;
+  height: 40px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 21%;
+  right: 0px;
+}
+.rightarm {
+  width: 60px;
+  height: 5px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 18%;
+  rotate: -30deg;
+  left: 93%;
+}
+.leftarm {
+  width: 60px;
+  height: 5px;
+  background-color: red;
+  position: absolute;
+  top: 18%;
+  rotate: 30deg;
+  left: 43%;
+}
+.rightleg {
+  width: 60px;
+  height: 5px;
+  background-color: blue;
+  position: absolute;
+  top: 44%;
+  rotate: 30deg;
+  left: 93%;
+}
+.leftleg {
+  width: 60px;
+  height: 5px;
+  background-color: green;
+  position: absolute;
+  /* top: 150px; */
+  top: 44%;
+  rotate: -30deg;
+  left: 43%;
+}
+
+/* body part css end */
+
+.wrapper > .right {
+  width: 60%;
+  align-self: center;
+}
+
+/* hangman words */
+
+.currword {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.wordbottom {
+  border-bottom: 5px solid var(--text-color);
+}
+
+/* keyboard */
+
+.keyboardwrap {
+  align-self: stretch;
+}
+.keyboard {
+  width: 70%;
+  margin: auto;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+  gap: 0.5rem;
+}
+
+.keyboardbtn {
+  width: 100%;
+  border: 2px solid var(--text-color);
+  background-color: var(--background-color);
+  aspect-ratio: 1/1;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  padding: 0.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.keyboardbtn:hover:not(:disabled),
+.keyboardbtn:focus:not(:disabled) {
+  background-color: hsl(200, 100%, 75%);
+  color: hsl(200, 100%, 25%);
+}
+.keyboardbtn.active {
+  background-color: hsl(200, 100%, 50%);
+  color: hsl(200, 100%, 25%);
+}
+.keyboardbtn.inactive {
+  opacity: 0.4;
+  color: var(--text-color);
+}
+
+@media (max-width: 970px) {
+  .keyboard {
+    width: 90%;
+  }
+}
+@media (max-width: 850px) {
+  .keyboard {
+    width: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  }
+  .keyboardbtn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .wrapper > .right {
+    width: 80%;
+    align-self: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .wrapper > .right {
+    width: 90%;
+  }
+}
