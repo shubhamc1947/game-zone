@@ -6,9 +6,6 @@ const Footer = () => {
             <div className={style.footerwrap}>
                 Made by Shubham ♥
             </div>
-            <div>
-                <a href="https://github.com/shubhamc1947/game-zone.git">Github</a>
-            </div>
         </div >
     )
 }
